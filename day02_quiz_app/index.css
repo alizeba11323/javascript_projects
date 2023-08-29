@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200;1,300&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.container {
+  background-color: #95a5a6;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.quiz_container {
+  width: 500px;
+  padding: 20px;
+  background-color: #34495e;
+  border-radius: 10px;
+}
+h3 {
+  font-size: 15px;
+  color: white;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+.option {
+  background: transparent;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid gray;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 18px;
+}
+.option:hover:not([disabled]) {
+  background-color: #1abc9c;
+  border: 2px solid #1abc9c;
+}
+.btn {
+  margin-top: 20px;
+  background: #1abc9c;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.option:disabled {
+  cursor: no-drop;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.question_no {
+  font-size: 13px;
+}
+.timer {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  background: #34495e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #76fce1;
+  font-weight: bold;
+}
+.timer:hover {
+  color: white;
+  background-color: #1abc9c;
+  cursor: pointer;
+}
+.start_btn {
+  padding: 10px;
+  background: white;
+  border: 2px solid #34495e;
+  color: #34495e;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.result_container {
+  background: #34495e;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.btn:hover {
+  background: #1a9e84;
+  color: white;
+}
+.replay {
+  background: transparent;
+  border: 2px solid #1abc9c;
+  color: #1abc9c;
+}
+.crown-app {
+  font-size: 100px;
+  display: block;
+  color: #1abc9c;
+}
+#username {
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+.welcome_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
