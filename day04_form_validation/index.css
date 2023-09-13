@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.image_container {
+  width: 500px;
+  height: 500px;
+  background: rgb(236, 120, 120);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.image_container label {
+  padding: 15px 10px;
+  color: white;
+  background: yellowgreen;
+  cursor: pointer;
+}
+.image_container input {
+  display: none;
+}
