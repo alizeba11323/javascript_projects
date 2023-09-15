@@ -9,8 +9,16 @@
   <body>
     <div class="container">
       <div class="image_container">
-        <label>
-          <input type="file" name="image-upload" class="file-upload" />
+        <div class="images"></div>
+        <label for="image-id">
+          <input
+            type="file"
+            name="image-upload"
+            class="file-upload"
+            accept="images/*"
+            id="image-id"
+            multiple
+          />
           + Image Uplaod
         </label>
       </div>
