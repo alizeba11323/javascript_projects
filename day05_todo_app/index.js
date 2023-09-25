@@ -1,36 +1,49 @@
-const inputValue = document.querySelector(".todo_add");
-const sendBtn = document.querySelector(".sendBtn");
-const todosContainer = document.querySelector(".todos");
+const TodoInput = document.querySelector(".todo_add");
+const SendBtn = document.querySelector(".sendBtn");
+const TodosElement = document.querySelector(".todos");
 
-sendBtn.addEventListener("click", function () {
-  const todo = {
-    id: Math.floor(Math.random() * 100),
-    title: inputValue.value,
-    completed: false,
-  };
-  const todoLocal = JSON.parse(localStorage.getItem("todos")) || [];
-  todoLocal.unshift(todo);
-  localStorage.setItem("todos", JSON.stringify(todoLocal));
-  getAllTodos();
-  inputValue.value = "";
-});
-
-function getAllTodos() {
-  todosContainer.innerHTML = "";
-  const todos = JSON.parse(localStorage.getItem("todos")) || [];
-  console.log(todos);
-  todos.forEach((todo) => {
-    const todoElement = document.createElement("div");
-    todoElement.className = "todo";
-    todoElement.innerHTML = `<div class="todo_span">
+function handleClose(e) {
+  e.target.parentElement.remove();
+  // if (e.target.nodeName === "span") {
+  //   console.log(e.target.nodeName);
+  //   e.target.parentElement.remove();
+  // } else if (e.target.nodeName === "path") {
+  //   e.target.parentElement.parentElement.parentElement.remove();
+  // } else if (e.target.nodeName === "svg") {
+  //   e.target.parentElement.parentElement.remove();
+}
+function handleChange(e) {
+  const target = e.target.parentElement.nextElementSibling;
+  if (e.target.checked) {
+    target.style.textDecoration = "line-through";
+  } else {
+    target.style.textDecoration = "none";
+  }
+}
+SendBtn.addEventListener("click", function () {
+  const inputValue = TodoInput.value;
+  if (inputValue === "") return alert("Please Fill the Input");
+  const div = document.createElement("div");
+  div.className = "todo";
+  div.innerHTML = `
+         <div class="todo_span">
             <label>
-              <input type="checkbox" class="checkbox_input" />
+              <input type="checkbox" class="checkbox_input" onchange="handleChange(event)" />
               <div class="checkbox_span"></div>
             </label>
-            <span>${todo.title}</span>
+            <span class="todo_title">${inputValue}</span>
           </div>
-          <span class="close">
-            <svg
+          <span class="close" onclick="handleClose(event)">
+            Delete
+          </span>
+  `;
+  TodosElement.appendChild(div);
+
+  TodoInput.value = "";
+});
+/**
+ * 
+ * <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-trash"
               width="24"
@@ -49,8 +62,4 @@ function getAllTodos() {
               <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
               <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
             </svg>
-          </span>`;
-    todosContainer.appendChild(todoElement);
-  });
-}
-getAllTodos();
+ */
