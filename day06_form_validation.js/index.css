@@ -1,0 +1,54 @@
+.container {
+  width: 100vh;
+  min-height: 100vh;
+  background-color: rgb(22, 166, 223);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.password {
+  width: 70%;
+  height: 50px;
+  background-color: rgb(243, 240, 240);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-left: 10px;
+  border: 2px solid rgb(243, 240, 240);
+}
+.input-password {
+  width: 90%;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: rgb(22, 166, 223);
+}
+.icon {
+  width: 10%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon:hover {
+  color: rgb(22, 166, 223);
+}
+.icon svg {
+  width: 25px;
+  height: 25px;
+}
+.input-password::placeholder {
+  color: rgb(22, 166, 223);
+}
+.error {
+  font-size: 18px;
+}
