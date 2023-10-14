@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(219, 213, 213);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.step {
+  width: 400px;
+  height: 300px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step p {
+  font-size: 25px;
+  color: blueviolet;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
+
+button {
+  background-color: #7950f2;
+  color: white;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+button:disabled {
+  background-color: rgb(85, 85, 85);
+  cursor: not-allowed;
+}
+.numbers {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.number {
+  background: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #7950f2;
+  color: blueviolet;
+  position: relative;
+}
+.number.active {
+  color: white;
+  background-color: #7950f2;
+}
+
+.number:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  color: white;
+  border: 2px solid #fff;
+  top: 15px;
+  left: -130px;
+}
+
+.number.active::before {
+  border-color: #7950f2;
+}
