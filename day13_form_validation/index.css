@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.form {
+  width: 100vw;
+  height: 100vh;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.password {
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 300px;
+  border-radius: 10px;
+}
+.btn {
+  padding: 8px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: rgb(18, 158, 93);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.span {
+  font-size: 17px;
+  color: rgb(127, 133, 133);
+  display: none;
+}
+.password_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* // check password length >=8
+// uppercase and lowercase
+//special charecter
+//number */
